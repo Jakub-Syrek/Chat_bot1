@@ -1,0 +1,28 @@
+[
+  {
+    "tag_name": "entity",
+    "ids_to_tags": {
+      "1": "B-day_of_week",
+      "2": "I-day_of_week",
+      "3": "L-day_of_week",
+      "4": "U-day_of_week",
+      "5": "B-hour",
+      "6": "I-hour",
+      "7": "L-hour",
+      "8": "U-hour",
+      "0": "O"
+    },
+    "tags_to_ids": {
+      "B-day_of_week": 1,
+      "I-day_of_week": 2,
+      "L-day_of_week": 3,
+      "U-day_of_week": 4,
+      "B-hour": 5,
+      "I-hour": 6,
+      "L-hour": 7,
+      "U-hour": 8,
+      "O": 0
+    },
+    "num_tags": 9
+  }
+]

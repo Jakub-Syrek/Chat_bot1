@@ -1,0 +1,6 @@
+[
+  {
+    "name": "day_of_week",
+    "pattern": "(\\bmonday\\b|\\btuesday\\b|\\bwedensday\\b|\\bthursday\\b|\\bfriday\\b|\\bsaturday\\b|\\bsunday\\b|\\bpiateczek\\b)"
+  }
+]

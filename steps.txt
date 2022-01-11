@@ -1,0 +1,56 @@
+HOW TO:
+
+1)
+//odpalenie przekierowania portu
+ngrok http 5005
+
+2)
+//replace in "credentials.yml" ngrok redirection page
+//f.ex:
+//https://d7a4-37-120-211-140.ngrok.io/webhooks/facebook/webhook
+
+4)(new session)
+//start server actions:
+rasa run actions
+
+5)(new session)
+//rasa run ==>
+rasa run --enable-api --cors "*"
+
+6)
+//Niestety dziala dobrze tylko z zainstalowana wersja desktopowa Telegrama ==>
+// do pobrania:
+//https://desktop.telegram.org/
+
+//Wejsc na adres bota: ( przekieruje do aplikacji desktopowej) ==>
+t.me/jsrasauser_bot
+
+//bot:
+//name = rasa-bot
+//username = jsrasauser_bot
+//webhook:5019039284:AAH6hfsjFfHMe530eaZM150HmMMfzHj17Go
+
+
+//Przydatne funkcje:
+
+//Interaktywne generowanie stories:
+rasa interactive
+
+//przetrenownie modelu:
+rasa train
+
+//Instalowanie serwera:
+pip install rasa_core_sdk
+
+//actions:
+//CD D:\Python\Chat_bot_1
+
+??? 1)
+//instalacja serwera akcji
+python -m rasa_core_sdk.endpoint --actions actions
+
+//Token
+token="EAAFCzY7kdt4BANbvA3MPZBtcNRijhIx39cITGZC2mw9vkOUGF6Q2lZBaKKktgVb6FYXZACXnKtTrrYHvnO8ctALEtO6WYCfNavrWKP9RBg2TcEIoD4pqkG32iAImOqJ2vGsnT8voA4i921z15EVYQbLytIjz41GKGXhV0OZCiNllAE3fQMEVF"
+//Telegraf secret
+secret="1aab471f98537b4296ce6b0a1145c6aa"
+

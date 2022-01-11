@@ -1,0 +1,76 @@
+version: '3.0'
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+intents:
+- greet
+- nlu_fallback
+- deny
+- order
+- ask_open
+- start_order
+- mood_great
+- address
+- affirm
+- ask_menu
+- goodbye
+- mood_unhappy
+- bot_challenge
+- start_pizza
+- politics
+entities:
+- day_of_week
+- hour
+- meals
+slots:
+  meals:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_text
+  address:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_text
+responses:
+  utter_greet:
+  - text: Hey! How are you?
+  utter_cheer_up:
+  - text: 'Here is something to cheer you up:'
+    image: https://i.imgur.com/nGF1K8f.jpg
+  utter_did_that_help:
+  - text: Did that help you?
+  utter_happy:
+  - text: Great, carry on!
+  utter_goodbye:
+  - text: Bye
+  utter_iamabot:
+  - text: I am a bot, powered by Rasa.
+  utter_ask_order:
+  - text: Please write down your order
+  utter_ask_address:
+  - text: What is your address?
+  utter_goodbay_pickup:
+  - text: Goodbay pickup!
+  utter_ask_delivery:
+  - text: Do you want delivery to your house?
+  utter_politics:
+  - text: ' i Konfederację'
+actions:
+- action_check_open
+- action_list_menu_items
+- action_show_order
+- action_summarize_order_delivery
+- utter_ask_address
+- utter_ask_delivery
+- utter_ask_order
+- utter_goodbay_pickup
+- utter_goodbye
+- utter_greet
+- utter_happy
+- utter_politics
+forms:
+  restaurant_form:
+    required_slots:
+    - meals

@@ -1,0 +1,184 @@
+version: "3.0"
+nlu:
+- intent: greet
+  examples: |
+    - yo
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - hey there
+    - let's go
+    - hey dude
+    - moin
+    - goodmorning
+    - goodevening
+    - good afternoon
+    - Hello
+- intent: goodbye
+  examples: |
+    - Bye
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+- intent: affirm
+  examples: |
+    - yes
+    - Yes
+    - y
+    - Y
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+- intent: deny
+  examples: |
+    - no
+    - No
+    - N
+    - n
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+- intent: mood_great
+  examples: |
+    - perfect
+    - great
+    - amazing
+    - feeling like a king
+    - wonderful
+    - I am feeling very good
+    - I am great
+    - I am amazing
+    - I am going to save the world
+    - super stoked
+    - extremely good
+    - so so perfect
+    - so good
+    - so perfect
+    - All good
+- intent: mood_unhappy
+  examples: |
+    - my day was horrible
+    - I am sad
+    - I don't feel very well
+    - I am disappointed
+    - super sad
+    - I'm so sad
+    - sad
+    - very sad
+    - unhappy
+    - not good
+    - not very good
+    - extremly sad
+    - so saad
+    - so sad
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+- intent: start_pizza
+  examples: |
+    - i would like to order a pizza
+    - i want pizza now
+    - it would be so nice to have a pizza rigt now
+- intent: ask_menu
+  examples: |
+    - menu
+    - what is on the menu
+    - i wonder what is on the menu
+    - what can i order
+    - what food can i buy here
+    - what meals do you have
+    - what meals do you serve
+    - recommend me something to eat
+    - What is on the menu
+- intent: ask_open
+  examples: |
+    - open
+    - is open at [wedensday](day_of_week) [11](hour)
+    - is open on [monday](day_of_week) [13](hour)
+    - is this bar open on [sunday](day_of_week) [10](hour)
+    - is this bar open at [saturday](day_of_week) [12](hour)
+    - is this bar open at [thursday](day_of_week) [13](hour)
+    - is this bar open at [friday](day_of_week) [14](hour)
+    - is it possible to eat on [saturday](day_of_week) [16](hour)
+    - is it possible to eat at [sunday](day_of_week) [17](hour)
+    - can I come at [friday](day_of_week) [15](hour)
+    - is this restaurant open at tusdey [14](hour)
+    - is this restaurant open at [wedensday](day_of_week) [14](hour)
+    - is this restaurant open at [wednesday](day_of_week) [14](hour)
+    - is the bar open at [tuesday](day_of_week) [9](hour)
+- intent: start_order
+  examples: |
+    - start order
+    - Start an order for me
+    - I want to start ordering
+    - I need to eat someting
+    - start order for me
+    - open order for me
+    - I would like to open an order
+    - Open an order for me
+    - Start order
+    - I wanted to place order
+- intent: order
+  examples: |
+    - Pizza
+    - pizza
+    - Lasagne
+    - lasagne
+    - Hot-dog
+    - hot-dog
+    - hotdog
+    - Burger
+    - burger
+    - Spaghetti Carbonara
+    - spaghetti carbonara
+    - Tiramisu
+    - tiramisu
+- intent: address
+  examples: |
+    - ul
+    - ul.
+    - ulica
+    - street
+    - ul.Bujaka 23/2, Krakow
+    - ul.Karmelicka 12/3, Przytkowice
+    - ul.Longstreet 21/22, Krzeszowice
+    - ul.Well 111/31, Warszawa
+    - ul.Bujaka Kraków
+- intent: politics
+  examples: |
+    - pis
+- intent: nlu_fallback
+  examples: |
+    - Fine
+- lookup: day_of_week
+  examples: |
+    - monday
+    - tuesday
+    - wednesday
+    - thursday
+    - friday
+    - saturday
+    - sunday
+    - Monday
+    - Tuesday
+    - Wednesday
+    - Thursday
+    - Friday
+    - Saturday
+    - Sunday

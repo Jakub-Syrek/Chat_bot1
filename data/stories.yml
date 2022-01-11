@@ -1,0 +1,182 @@
+version: "3.0"
+
+stories:
+
+- story: politics path
+  steps:
+  - intent: politics
+  - action: utter_politics
+
+- story: happy path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_great
+  - action: utter_happy
+
+- story: ask open
+  steps:
+  - intent: ask_open
+  - action: action_check_open
+
+- story: ask menu
+  steps:
+  - intent: ask_menu
+  - action: action_list_menu_items
+
+- story: ask order pick up
+  steps:
+  - intent: start_order
+  - action: utter_ask_order
+  - intent: order
+  - action: action_show_order
+  - action: utter_ask_delivery
+  - intent: deny
+  - action: utter_goodbay_pickup
+
+- story: ask order delivery affirm
+  steps:
+  - intent: start_order
+  - action: utter_ask_order
+  - intent: order
+  - action: action_show_order
+  - action: utter_ask_delivery
+  - intent: affirm
+  - action: utter_ask_address
+  - intent: address
+  - action: action_summarize_order_delivery
+
+- story: ask order delivery deny
+  steps:
+  - intent: start_order
+  - action: utter_ask_order
+  - intent: order
+  - action: action_show_order
+  - action: utter_ask_delivery
+  - intent: deny
+
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - slot_was_set:
+    - meals: Hello
+  - slot_was_set:
+    - address: Hello
+  - action: utter_greet
+
+- story: interactive_story_2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_great
+  - action: utter_happy
+  - intent: ask_menu
+  - action: action_list_menu_items
+  - intent: start_order
+  - action: utter_ask_order
+  - intent: order
+  - slot_was_set:
+    - meals: Pizza
+  - action: action_show_order
+  - action: utter_ask_delivery
+  - intent: affirm
+  - action: utter_ask_address
+  - intent: address
+  - slot_was_set:
+    - address: ul.Bujaka Kraków
+  - action: action_summarize_order_delivery
+  - action: utter_goodbye
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - slot_was_set:
+    - meals: Hello
+  - slot_was_set:
+    - address: Hello
+  - action: utter_greet
+  - intent: ask_open
+    entities:
+    - hour: '14'
+  - slot_was_set:
+    - meals: is this bar open at tuesdey 14
+  - slot_was_set:
+    - address: is this bar open at tuesdey 14
+
+- story: interactive_story_2
+  steps:
+  - intent: greet
+  - slot_was_set:
+    - meals: Hello
+  - slot_was_set:
+    - address: Hello
+  - action: utter_greet
+  - intent: mood_great
+  - slot_was_set:
+    - meals: All good
+  - slot_was_set:
+    - address: All good
+  - action: utter_happy
+  - intent: ask_open
+    entities:
+    - day_of_week: wedensday
+    - hour: '14'
+  - slot_was_set:
+    - meals: is this bar open at wedensday 14
+  - slot_was_set:
+    - address: is this bar open at wedensday 14
+  - action: action_check_open
+  - intent: ask_open
+    entities:
+    - day_of_week: wednesday
+    - hour: '14'
+  - slot_was_set:
+    - meals: is this bar open at wednesday 14
+  - slot_was_set:
+    - address: is this bar open at wednesday 14
+  - action: action_check_open
+
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - slot_was_set:
+    - meals: Hello
+  - slot_was_set:
+    - address: Hello
+  - action: utter_greet
+  - intent: nlu_fallback
+  - slot_was_set:
+    - meals: Fine
+  - slot_was_set:
+    - address: Fine
+  - action: action_list_menu_items
+
+- story: interactive_story_2
+  steps:
+  - intent: ask_open
+    entities:
+    - day_of_week: tuesday
+    - hour: '9'
+  - slot_was_set:
+    - meals: is the bar open at tuesday 9
+  - slot_was_set:
+    - address: is the bar open at tuesday 9
+  - action: action_check_open
+  - intent: start_order
+  - slot_was_set:
+    - meals: I wanted to place order
+  - slot_was_set:
+    - address: I wanted to place order
+  - action: utter_ask_order
+  - intent: order
+  - slot_was_set:
+    - meals: Lasagne
+  - slot_was_set:
+    - address: Lasagne
+  - action: action_show_order
+  - action: utter_ask_delivery
+  - intent: deny
+  - slot_was_set:
+    - meals: No
+  - slot_was_set:
+    - address: No
+  - action: utter_goodbay_pickup

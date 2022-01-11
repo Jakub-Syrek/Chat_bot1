@@ -149,6 +149,7 @@ class ActionShowOrder(Action):
                 if menu_meal in meal:
                     selected_meal = menu_meal
 
+
             extra_info_with_number = meal.replace(selected_meal, '')
             extra_info = ''.join([i for i in extra_info_with_number if not i.isdigit()]).lstrip()
 

@@ -110,10 +110,12 @@ class ActionShowOrder(Action):
 
         with open('restaurant_info/menu.json') as menu_file:
             menu = json.load(menu_file)
+
         menu_items = menu.get('items')
         menu_meals = []
         approved_meals = []
         failed_meals = []
+
         for item in menu_items:
             menu_meals.append(item.get('name'))
 
@@ -135,19 +137,25 @@ class ActionShowOrder(Action):
         failed_meals_for_user = failed_meals_for_user.join(failed_meals_table)
         if failed_meals:
             dispatcher.utter_message(text=f"Sorry, but those meals aren't in the menu: {failed_meals_for_user}")
+            return []
 
         general_cost = 0
         general_time = 0
         for meal in approved_meals:
+
             search_for_int = re.search(r'\d+', meal)
+
             if search_for_int is None:
                 count = 1
             else:
                 count = int(search_for_int.group())
+
             selected_meal = ''
+
             for menu_meal in menu_meals:
                 if menu_meal in meal:
                     selected_meal = menu_meal
+                    break
 
 
             extra_info_with_number = meal.replace(selected_meal, '')
@@ -159,16 +167,21 @@ class ActionShowOrder(Action):
                 if item.get('name') is selected_meal:
                     product_price = item.get('price')
                     product_time = item.get('preparation_time')
+                    break
+
             general_cost = general_cost + product_price * count
             general_time = general_time + product_time * count
             meal_info = f'{count}x {selected_meal}, Price: {product_price}x{count}={product_price * count}, Time for preparation: {product_time}x{count}={product_time * count}'
+
             if extra_info:
                 meal_info_with_extra = meal_info + f' Extra info: {extra_info}'
             else:
                 meal_info_with_extra = meal_info
+
             dispatcher.utter_message(text=meal_info_with_extra)
+
         dispatcher.utter_message(
-            text=f'For all this, you need to pay {general_cost}, and the food will be ready after {general_time} hours')
+            text=f'Total cost will be: {general_cost}, and meal will be ready in approximately: {general_time} hours')
         return []
 
 
